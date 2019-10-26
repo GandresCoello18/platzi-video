@@ -1,9 +1,12 @@
-$rojo: #cdcdcd;
-$verde: lime;
+@import "./component/vars.scss";
+@import "./component/media.scss";
 
-body{
-    background-color: $rojo;
-    h1{
-        color: $verde;
-    }
-}
+body {
+    margin: 0;
+    font-family: $theme-font;
+    background: $main-color;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
