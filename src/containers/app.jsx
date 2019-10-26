@@ -8,11 +8,13 @@ import Footer from "../component/footer";
 import useInitialState from "../hooks/useInitialState";
 import "../assets/styles/app.scss";
 
-const API = 'http://localhost:3000/initalState';
+const API = 'http://localhost:8080/initalState.json';
 
 const App = (props) => {
 
     const dato = useInitialState(API);
+    const initalState = dato.initalState;
+    if(!initalState) return null
     console.log(dato)
     
 
@@ -29,7 +31,7 @@ const App = (props) => {
 
             <Categorias title="Tendencias">
                 <Carrusel>
-                {dato.map( valor => (
+                {initalState.trends.map( valor => (
                     <CarruselItem key={valor.id}  {...valor} />
                 ))}
                 </Carrusel>
